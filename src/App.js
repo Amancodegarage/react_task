@@ -23,17 +23,19 @@ function App() {
     <div className="App">
       <div>
         <h2 class="text-center mb-32">Select your child</h2>
+        <div>
+          {urlLinks.map((value) => {
+            return (
+              <>
+                <Child
+                  background={require(value.background + "")}
+                  image={require(value.image + "")}
+                />
+              </>
+            );
+          })}
+        </div>
 
-        {urlLinks.map((value) => {
-          return (
-            <>
-              <Child
-                background={require(value.background + "")}
-                image={require(value.image + "")}
-              />
-            </>
-          );
-        })}
         <Button />
       </div>
     </div>
